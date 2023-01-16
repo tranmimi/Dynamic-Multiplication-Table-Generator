@@ -1,0 +1,106 @@
+/*
+    Name: Mimi Tran
+    Last Updated: January 13, 2022
+    HW 3: Creating an Interactive Dynamic Table
+    HW 4: Using the jQuery Plugin/UI with Your Dynamic Table
+    style.js
+*/
+
+body {
+    background-color: #f0f0f0;
+    color: #5b656e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+/* Styling for Header and Instructions section. */
+
+h1 {
+    text-align: center;
+}
+
+#instructionTitle {
+    text-align: center;
+    font-weight: bolder;
+}
+#instructions {
+    border: 4px double #8a939c;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    min-width: 720px;
+    max-width: 1340px;
+}
+
+/* Styling for the Form. */
+#page {
+    /* background-color: cadetblue; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+
+    min-width: 700px;
+    max-width: 900px;
+}
+
+button {
+    background-color: #f194a3;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+}
+button:hover {
+    background:#e98696; 
+    color: #fedad3;
+    cursor: pointer;
+}
+
+/* 
+    Animated border color code for a focused input field sourced from:
+        https://www.w3schools.com/css/tryit.asp?filename=trycss_form_focus2
+*/
+input[type=number] {
+    color:#5b656e;
+    border: 2px solid #fedad3;
+    border-radius: 5px;
+    font-size: 20px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+input[type=number]:focus {
+    border: 2px solid #e98696;
+}
+
+.errorMessage {
+    color: rgb(209, 60, 60);
+}
+
+/* Styling for the Multiplication Table. */
+table, th, td {
+    margin-left: 50%;
+    margin-right: 50%;
+    border: 2px double #e98696;
+
+}
+
+
+
+/* tr:nth-child(0), td:nth-child(1) {
+    background-color: white;
+} */
+
+tr:nth-child(even), th:nth-child(odd) {
+    background-color: #ffc4cd;
+}
+
+tr:nth-child(odd), th:nth-child(even) {
+    background-color: #fedad3;
+}
