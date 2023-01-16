@@ -1,6 +1,6 @@
 /*
     Name: Mimi Tran
-    Last Updated: January 13, 2023
+    Last Updated: January 15, 2023
     HW 3: Creating an Interactive Dynamic Table
     HW 4: Using the jQuery Plugin/UI with Your Dynamic Table
     validation.js
