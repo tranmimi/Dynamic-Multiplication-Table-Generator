@@ -53,8 +53,9 @@ button {
     border: none;
     border-radius: 10px;
     font-size: 20px;
-    width: 150px;
+    width: 170px;
     height: 40px;
+    margin-left: 15px;
 }
 button:hover {
     background:#e98696; 
