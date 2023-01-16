@@ -1,6 +1,6 @@
 /*
     Name: Mimi Tran
-    Last Updated: January 13, 2022
+    Last Updated: January 15, 2022
     HW 3: Creating an Interactive Dynamic Table
     HW 4: Using the jQuery Plugin/UI with Your Dynamic Table
     style.js
@@ -53,8 +53,9 @@ button {
     border: none;
     border-radius: 10px;
     font-size: 20px;
-    width: 100px;
+    width: 170px;
     height: 40px;
+    margin-left: 15px;
 }
 button:hover {
     background:#e98696; 
@@ -79,23 +80,21 @@ input[type=number]:focus {
     border: 2px solid #e98696;
 }
 
+form.cmxform label.error, label.error {
+    color: rgb(209, 60, 60);
+}
+
 .errorMessage {
     color: rgb(209, 60, 60);
 }
 
 /* Styling for the Multiplication Table. */
 table, th, td {
-    margin-left: 50%;
-    margin-right: 50%;
+    margin-left: auto;
+    margin-right: auto;
     border: 2px double #e98696;
 
 }
-
-
-
-/* tr:nth-child(0), td:nth-child(1) {
-    background-color: white;
-} */
 
 tr:nth-child(even), th:nth-child(odd) {
     background-color: #ffc4cd;
@@ -104,3 +103,9 @@ tr:nth-child(even), th:nth-child(odd) {
 tr:nth-child(odd), th:nth-child(even) {
     background-color: #fedad3;
 }
+
+tr:nth-child(1), td:nth-child(1) {
+    background-color: #f194a3;
+    color: white;
+}
+

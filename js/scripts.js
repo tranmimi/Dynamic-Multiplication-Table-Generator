@@ -1,9 +1,9 @@
 /*
     Name: Mimi Tran
-    Last Updated: January 13, 2023
+    Last Updated: January 15, 2023
     HW 3: Creating an Interactive Dynamic Table
     HW 4: Using the jQuery Plugin/UI with Your Dynamic Table
-    validation.js
+    scripts.js
 */
 
 /* 
@@ -15,7 +15,7 @@
             HTML5 validation checking. 
 */
 
-function validateInputs(event) {
+function validateInputs() {
     // Clear any previous error messages if user submits inputs more than once.
     document.getElementById("errorMinR").innerHTML = "";
     document.getElementById("errorMinC").innerHTML = "";
@@ -28,7 +28,7 @@ function validateInputs(event) {
 
     // Create a multiplication table using the entered values if they are valid.
     if (minRowVal <= maxRowVal && minColVal <= maxColVal) {
-        createMultTable(minRowVal, maxRowVal, minColVal, maxColVal);
+        createMultTable(minRowVal, maxRowVal, minColVal, maxColVal, "table");
     } else {
         // If the minimum row value is larger than the maximum row value, inform the user.
         if (minRowVal > maxRowVal) {
@@ -49,7 +49,8 @@ function validateInputs(event) {
     createMultTable will create a multiplication table using valid parameters given
     by the user.
 */
-function createMultTable(minR, maxR, minC, maxC) {
+function createMultTable(minR, maxR, minC, maxC, sectionID) {
+    
     var currCol = minC, ctemp = currCol;
     var currRow = minR, rtemp = currRow;
     var row = 0, col = 0, cellData;
@@ -75,7 +76,8 @@ function createMultTable(minR, maxR, minC, maxC) {
             } else if (row != 0 && col == 0) {
                 cellData = document.createTextNode(rtemp);
                 rtemp++;
-            // Otherwise, compute the product between the current multiplicand and multiplier, and save this product into the current cell being made. 
+            // Otherwise, compute the product between the current multiplicand and 
+            // multiplier, and save this product into the current cell being made. 
             } else {
                 cellData = document.createTextNode(currRow * currCol);
                 currCol++;
@@ -92,16 +94,37 @@ function createMultTable(minR, maxR, minC, maxC) {
 
     // Insert newly filled table body into the newly created table.
     tbl.appendChild(tblBody);
-    
-    // Replaces an existing table with new one.
+
+    // If the Table is going into the Tables <div>, set the id to "multTable". Then, check 
+    // if there was a previous Table.
     var isThereAPrevTable = document.getElementById("multTable");
-    if(isThereAPrevTable != null) {
-        const prevTable = document.getElementById("multTable");
-        prevTable.replaceWith(tbl);
-    // If a multiplication table did not previously exist, simply append the newly created table to <body>
+    if (sectionID == "table" && isThereAPrevTable != null) {
+        // Replaces an existing Table with new one.
+            const prevTable = document.getElementById("multTable");
+            prevTable.replaceWith(tbl);
+            
+    // If a multiplication table did not previously exist, append it to the appropriate section.
+    // This will also create a mutliplication table in a Tab.
     } else {
-        document.body.appendChild(tbl);
+        var tableID = document.getElementById(sectionID);
+        tableID.append(tbl);
     }
 
-    tbl.setAttribute("id", "multTable");
+    if (sectionID == "table") {
+        tbl.setAttribute("id", "multTable");
+    }
+    
+}
+
+/*
+    addTab enables the ability for a new Tab to be appended to the Tabs section 
+    when a Table is saved.
+*/
+function addTab(title, tabId, tabIndex) {
+    // First, create a new Tab to store the Table.
+    
+    
+    // Create a new Table with the same paramters as the Table to be Saved. This new Table
+    // will be displayed under the Tab being made.
+    createMultTable(minR, maxR, minC, maxC, tabID);
 }
