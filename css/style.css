@@ -53,7 +53,7 @@ button {
     border: none;
     border-radius: 10px;
     font-size: 20px;
-    width: 100px;
+    width: 150px;
     height: 40px;
 }
 button:hover {
@@ -79,23 +79,21 @@ input[type=number]:focus {
     border: 2px solid #e98696;
 }
 
+form.cmxform label.error, label.error {
+    color: rgb(209, 60, 60);
+}
+
 .errorMessage {
     color: rgb(209, 60, 60);
 }
 
 /* Styling for the Multiplication Table. */
 table, th, td {
-    margin-left: 50%;
-    margin-right: 50%;
+    margin-left: auto;
+    margin-right: auto;
     border: 2px double #e98696;
 
 }
-
-
-
-/* tr:nth-child(0), td:nth-child(1) {
-    background-color: white;
-} */
 
 tr:nth-child(even), th:nth-child(odd) {
     background-color: #ffc4cd;
@@ -109,3 +107,4 @@ tr:nth-child(1), td:nth-child(1) {
     background-color: #f194a3;
     color: white;
 }
+

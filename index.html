@@ -12,7 +12,10 @@
         <title>Create an Interactive Dynamic Table</title>
 
         <!-- Style Sheet -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
         <link rel="stylesheet" href="css/style.css" />
+        
     </head>
     <body>
         <h1>Create an Interactive Dynamic Table</h1>
@@ -23,16 +26,18 @@
             <p>Valid inputs will produce a multiplication table. Each saved table will be stored in the Tabs section at the bottom of the page. Click on a tab with the desired inputs to revisit a multiplication table you created!</p>
             <p><i>Note:</i> Larger ranges may take a while to load!</p>
         </div>
-        
+
         <div id="page">
             <!-- 
                 Form which asks user for:
-                - Minimum Row Value
-                - Maximum Row Value
-                - Minimum Column Value
-                - Maximum Column Value
+                    - Minimum Row Value
+                    - Maximum Row Value
+                    - Minimum Column Value
+                    - Maximum Column Value
             -->
-            <form onsubmit="validateInputs();return false;">
+
+            <!-- min=-50 max=50 required -->
+            <form class="cmxform" id="inputForm" onsubmit="validateInputs();return false;">
                 <label for="minRow">Minimum Row Value: </label>
                 <input type="number" name="minRow" id="minRow" min=-50 max=50 required>
                 <span class="errorMessage" id="errorMinR"></span>
@@ -47,12 +52,14 @@
                 <label for="maxCol">Maximum Column Value: </label>
                 <input type="number" name="maxCol" id="maxCol" min=-50 max=50 required>
                 <br><br>
-                <button type="submit" id="button">Submit</button>
+                <button type="submit" id="button">Save Table</button>
             </form>
         </div>
 
         <!-- Scripts -->
-        <!-- <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script> -->
+        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
         <script src="js/scripts.js"></script>
+        <script src="js/jquery.js"></script>
     </body>
 </html>
