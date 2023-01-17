@@ -50,7 +50,6 @@ function validateInputs() {
     by the user.
 */
 function createMultTable(minR, maxR, minC, maxC, sectionID) {
-    
     var currCol = minC, ctemp = currCol;
     var currRow = minR, rtemp = currRow;
     var row = 0, col = 0, cellData;
@@ -113,18 +112,4 @@ function createMultTable(minR, maxR, minC, maxC, sectionID) {
     if (sectionID == "table") {
         tbl.setAttribute("id", "multTable");
     }
-    
-}
-
-/*
-    addTab enables the ability for a new Tab to be appended to the Tabs section 
-    when a Table is saved.
-*/
-function addTab(title, tabId, tabIndex) {
-    // First, create a new Tab to store the Table.
-    
-    
-    // Create a new Table with the same paramters as the Table to be Saved. This new Table
-    // will be displayed under the Tab being made.
-    createMultTable(minR, maxR, minC, maxC, tabID);
 }
