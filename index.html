@@ -12,7 +12,7 @@
         <title>Create an Interactive Dynamic Table</title>
 
         <!-- Style Sheet -->
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="css/style.css" />
         
     </head>
@@ -52,21 +52,35 @@
                 <br><br>
                 <button type="submit" id="submitBtn">Generate Table</button>
                 <button type="submit" id="saveBtn">Save Table</button>
-                <button type="submit" id="deleteBtn">Delete Tab(s)</button>
             </form>
         </div>
+        
+        <!-- Tabs section. 
+            Add Tabs button functionality and Tab section layout sourced from:
+                https://stackoverflow.com/questions/42735710/dynamically-add-edit-remove-bootstrap-tab
+        -->
+        <div class="container">
+            <div class="row">
+                    <!-- <p>
+                        <button id="addTab" type="button" class="btn btn-primary pull-right">Add Tab</button>
+                    </p> -->
+                    <!-- Nav tabs -->
+                    <ul id="tabsSection" class="nav nav-tabs" role="tablist"></ul>
+        
+                    <!-- Tab panes -->
+                    <div id="tabContent" class="tab-content"></div>
+            </div>
+        </div>
 
-        <!-- Tabs section. -->
-        <!-- This is where all the Tab header buttons will go. -->
-        <div id="tabs"></div>
-        <!-- This is where all the Tab content will go. They are hidden by default. -->
-        <div class="tabContent"></div>
+        <br>
 
         <!-- Table section. -->
         <div id="table"></div>
 
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <script src="js/scripts.js"></script>
